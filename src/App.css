@@ -1,26 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: #202729;
+  text-transform: lowercase;
+  height: calc(100vh - 10px);
+  border-bottom: 10px solid #63d297;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  color: #202729;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-container {
+  display: inline-block;
+  background: #efefef;
+  margin: auto;
+  margin-top: 20vh;
+  padding: 2rem;
+  border-radius: .2rem;
+  box-shadow: 0 0px 2rem 5px rgba(0,0,0,0.5);
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  display: block;
+  margin: 1rem auto;
+  padding: .75rem;
+  border-radius: .2rem;
+  border: 1px solid #cecece;
+  font-size: 1rem;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+input[type='submit'] {
+  width: 100%;
+  background: #4BA173;
+  color: #efefef;
+  text-transform: lowercase;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+
+  transition: all 0.2s ease;
+}
+
+input[type='submit']:hover {
+  background: #63d297;
+  color: #202729;
 }
 
 @keyframes App-logo-spin {
