@@ -35,11 +35,18 @@ h1 {
 input {
   display: block;
   margin: 1rem auto;
+  margin-bottom: .25rem;
   padding: .75rem;
   border-radius: .2rem;
   border: 1px solid #cecece;
   font-size: 1rem;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  border-left-width: 3px;
+}
+
+input[type='text']:focus {
+  border-left-width: 3px;
+  outline: none;
 }
 
 input[type='submit'] {
@@ -66,4 +73,19 @@ input[type='submit']:hover {
   to {
     transform: rotate(360deg);
   }
+}
+
+.error-message {
+  color: red;
+  margin: 0;
+  text-align: left;
+  margin-left: .25rem;
+}
+
+.invalid {
+  border-left-color: red;
+}
+
+.valid {
+  border-left-color: #63d297;
 }
