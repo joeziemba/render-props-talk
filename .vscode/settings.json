@@ -1,0 +1,8 @@
+{
+  "editor.fontSize": 16,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#3ba575",
+    "statusBarItem.hoverBackground": "#52c18f",
+    "statusBar.foreground": "#e7e7e7"
+  }
+}
