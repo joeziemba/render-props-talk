@@ -9,10 +9,10 @@ import Form4 from './_components/Form-4';
 function App() {
   return (
     <div className="App">
-      {/* <Form1 /> */}
+      <Form1 />
       {/* <Form2 /> */}
       {/* <Form3 /> */}
-      <Form4 />
+      {/* <Form4 /> */}
     </div>
   );
 }
