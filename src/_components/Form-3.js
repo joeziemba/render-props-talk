@@ -1,6 +1,5 @@
 import React from "react";
 import Input from "./Input";
-import Validator from "./Validator";
 
 class Form3 extends React.Component {
   constructor(props) {
@@ -8,50 +7,60 @@ class Form3 extends React.Component {
 
     this.state = {
       name: "",
-      email: ""
+      email: "",
+      validation: {
+        name: false,
+        email: false
+      }
     };
     this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(e) {
     let { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value }, this.validate);
   }
 
   onSubmit(e) {
     e.preventDefault();
   }
 
+  validate() {
+    let { validation } = this.state;
+
+    let fields = ["name", "email"];
+
+    fields.forEach(field => {
+      validation[field] = this.state[field] !== "";
+    });
+
+    this.setState({ validation });
+  }
+
   render() {
+    let { validation } = this.state;
+
     return (
       <div className="form-container">
         <h1>Sign Up</h1>
         <form onSubmit={this.onSubmit}>
-          <Validator
+          <Input
             value={this.state.name}
-            render={validatorProps => {
-              return (
-                <Input
-                  onChange={this.onChange}
-                  name={"name"}
-                  {...validatorProps}
-                />
-              );
-            }}
+            onChange={this.onChange}
+            name={'name'}
+            isValid={validation.name}
+            errorMessage="This is required"
           />
 
-          <Validator
+          <Input
             value={this.state.email}
-            render={validatorProps => {
-              return (
-                <Input
-                  onChange={this.onChange}
-                  name={"email"}
-                  {...validatorProps}
-                />
-              );
-            }}
+            onChange={this.onChange}
+            name={'email'}
+            isValid={validation.email}
+            errorMessage="This is required"
           />
+
           <input type="submit" />
         </form>
       </div>

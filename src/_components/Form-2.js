@@ -1,5 +1,4 @@
 import React from "react";
-import Input from "./Input";
 
 class Form2 extends React.Component {
   constructor(props) {
@@ -14,10 +13,12 @@ class Form2 extends React.Component {
       }
     };
     this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(e) {
     let { name, value } = e.target;
+    debugger;
     this.setState({ [name]: value }, this.validate);
   }
 
@@ -27,7 +28,7 @@ class Form2 extends React.Component {
 
   validate() {
     let { validation } = this.state;
-
+debugger;
     let fields = ["name", "email"];
 
     fields.forEach(field => {
@@ -44,21 +45,31 @@ class Form2 extends React.Component {
       <div className="form-container">
         <h1>Sign Up</h1>
         <form onSubmit={this.onSubmit}>
-          <Input
+          <input
+            type="text"
+            className={validation.name ? "valid" : "invalid"}
             value={this.state.name}
             onChange={this.onChange}
-            name={'name'}
-            isValid={validation.name}
-            errorMessage="This is required"
+            placeholder='name'
+            name='name'
           />
+          {validation.name
+            ? null
+            : <p className="error-message">This is required</p>
+          }
 
-          <Input
+          <input
+            type="text"
+            className={validation.email ? "valid" : "invalid"}
             value={this.state.email}
             onChange={this.onChange}
-            name={'email'}
-            isValid={validation.email}
-            errorMessage="This is required"
+            placeholder='email'
+            name='email'
           />
+          {validation.email
+            ? null
+            : <p className="error-message">This is required</p>
+          }
 
           <input type="submit" />
         </form>

@@ -2,7 +2,9 @@ import React from "react";
 
 const Validator = props => {
   let errorMessage = "";
+
   let isValid = props.value !== "";
+
   if (!isValid) {
     errorMessage = "This field is required";
   }
