@@ -63,6 +63,7 @@ class Form3 extends React.Component {
 
           <input type="submit" />
         </form>
+        <span className='version'>v3.0</span>
       </div>
     );
   }

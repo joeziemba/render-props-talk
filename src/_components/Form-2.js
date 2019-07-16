@@ -73,6 +73,7 @@ debugger;
 
           <input type="submit" />
         </form>
+        <span className='version'>v2.0</span>
       </div>
     );
   }

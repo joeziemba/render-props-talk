@@ -22,7 +22,16 @@ h1 {
   color: #202729;
 }
 
+.version {
+  font-size: .75rem;
+  opacity: .5;
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem;
+}
+
 .form-container {
+  position: relative;
   display: inline-block;
   background: #efefef;
   margin: auto;

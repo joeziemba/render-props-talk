@@ -44,6 +44,7 @@ class Form1 extends React.Component {
 
           <input type="submit" />
         </form>
+        <span className='version'>v1.0</span>
       </div>
     );
   }

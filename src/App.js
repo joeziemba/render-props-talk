@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="App">
       <Form1 />
-      {/* <Form2 /> */}
-      {/* <Form3 /> */}
-      {/* <Form4 /> */}
+      <Form2 />
+      <Form3 />
+      <Form4 />
     </div>
   );
 }
